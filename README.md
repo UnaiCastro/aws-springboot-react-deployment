@@ -1,6 +1,5 @@
 # aws-springboot-react-deployment
-🇬🇧 English | 🇪🇸 Español
-
+[English](#english-version) | [Español](#versión-en-español)
 ---
 
 # 🇬🇧 English Version
