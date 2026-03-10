@@ -1,4 +1,11 @@
 # aws-springboot-react-deployment
+![Java](https://img.shields.io/badge/Java-21-orange)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
+![React](https://img.shields.io/badge/React-18-blue)
+![AWS](https://img.shields.io/badge/AWS-ECS%20%7C%20S3%20%7C%20CloudFront-232F3E)
+![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED)
+
 [English](#english-version) | [Español](#versión-en-español)
 ---
 
@@ -104,6 +111,16 @@ The stack could be divided in many groups:
 - OIDC federation
 - Environment-based build configuration
 ---
+
+### System Design Decisions
+
+The application consumes the external API through the backend rather than directly from the frontend. This architectural decision allows the system to better manage and control the information provided by third-party endpoints. By introducing the backend as an intermediary layer, it becomes possible to implement security mechanisms, validate and transform external data, and expose only the necessary information to the frontend.
+
+Spring Boot was selected as the backend framework because it enables rapid and structured development of RESTful services while simplifying integration with external APIs. It allows the application to consume third-party services and expose a clean internal API that can be securely and efficiently consumed by the frontend.
+
+To handle the external API consumption, Spring WebFlux was used due to its reactive and non-blocking programming model. This approach improves scalability and performance when interacting with external services by allowing the system to manage multiple concurrent requests efficiently.
+
+For the frontend, React was chosen because of its component-based architecture and mature ecosystem. It enables the development of modular and reusable user interface components and integrates well with modern tooling for building scalable applications that consume REST APIs.
 
 # 🇪🇸 Versión en Español
 (content)
